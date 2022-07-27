@@ -41,6 +41,12 @@ class AuthController extends Controller
             'user' => Auth::user(),
         ]);
     }
+    
+    public function getMyProfile()
+    {
+        $activeUser = Auth::user();
+        return response()->json($activeUser);
+    }
 
     public function logout()
     {
