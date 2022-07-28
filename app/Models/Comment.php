@@ -5,22 +5,23 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Image extends Model
+class Comment extends Model
 {
     use HasFactory;
 
     protected $fillable = [
+        'user_id',
         'gallery_id',
-        'url',
-
+        'content'
     ];
 
-    public function user()
-    {        
+    public function user(){
         return $this->belongsTo(User::class);
-        }
-    public function gallery()
-    {        
+    }
+
+    public function gallery(){
         return $this->belongsTo(Gallery::class);
-        }
+    }
+
 }
+

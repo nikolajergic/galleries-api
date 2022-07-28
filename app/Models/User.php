@@ -57,4 +57,8 @@ class User extends Authenticatable implements JWTSubject
             'email' => $this->email,
         ];
     }
+
+    public function gallery() {
+        return $this->hasMany(Gallery::class);
+    }
 }
